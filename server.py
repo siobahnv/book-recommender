@@ -1,11 +1,8 @@
 """Woo backend coding!"""
 
-from flask import (Flask, render_template, redirect, request, flash,
-                   session, jsonify, url_for)
+from model import User, Book, BookList, connect_to_db, db
 
-from model import User, Rating, Movie, connect_to_db, db
-
-app = Flask(__name__)
+from secrets import *
 
 @app.route("/")
 def index():
