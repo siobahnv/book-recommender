@@ -4,6 +4,14 @@ from model import User, Book, BookList, connect_to_db, db
 
 from secrets import *
 
+from flask import (Flask, render_template, redirect, request, flash,
+                   session, jsonify, url_for)
+
+app = Flask(__name__)
+
+# Required to use Flask sessions and the debug toolbar
+app.secret_key = my_secret_key
+
 @app.route("/")
 def index():
     """Show homepage"""
@@ -11,11 +19,10 @@ def index():
     return """
       <html>
         <body>
-          <h1>I am the landing page</h1>
+          <h1>I am the landing page, woopo</h1>
         </body>
       </html>
       """
-
 
 if __name__ == "__main__":
     
