@@ -14,15 +14,9 @@ app.secret_key = my_secret_key
 
 @app.route("/")
 def index():
-    """Show homepage"""
+  """Homepage."""
 
-    return """
-      <html>
-        <body>
-          <h1>I am the landing page, woopo</h1>
-        </body>
-      </html>
-      """
+  return render_template("index.html")
 
 if __name__ == "__main__":
     
